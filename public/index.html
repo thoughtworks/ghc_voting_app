@@ -16,15 +16,14 @@
   <body>
 
     <div class="container">
-        <h1>GHC Votes!</h1>
-        <div class="navbar navbar-inverse">
+        <h3>What is your bold approach to change the face of IT?</h3>
+        <!-- <div class="navbar navbar-inverse">
           <div class="navbar-header">
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-01"></button>
           </div>    
           <div class="navbar-collapse collapse" id="nav-collapse-01">
             <div class="nav-collapse collapse in" id="nav-collapse-01">
               <ul class="nav">
-                <!-- Menu items go here -->
                 <li><a href="/">Index</a>
                   <ul>
                     <li><a hef="#">Sub Index</a></li>
@@ -33,7 +32,27 @@
               </ul>
             </div>      
           </div>      
-        </div>
+        </div> -->
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="firstName" class="sr-only">First Name</label>
+                <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="lastName" class="sr-only">Last Name</label>
+                <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="Email">
+            </div>
+            <div class="form-group"  style="text-align:center">
+                <button type="submit" class="btn btn-block btn-primary">Submit</button>
+            </div>
+        </form>
     </div>
     <!-- /.container -->
 
