@@ -40,5 +40,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ffi
   jasmine
   sinatra
