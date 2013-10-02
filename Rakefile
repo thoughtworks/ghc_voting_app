@@ -1,9 +1,11 @@
+require 'rubygems'
+require 'bundler/setup'
 
-begin
-  require 'jasmine'
-  load 'jasmine/tasks/jasmine.rake'
-rescue LoadError
-  task :jasmine do
-    abort "Jasmine is not available. In order to run jasmine, you must: (sudo) gem install jasmine"
-  end
+require 'selenium-webdriver'
+require 'service_manager'
+
+
+desc 'Run Jasmine tests with Phantomjs'
+task :testJs do
+  sh %{phantomjs lib/phantom-jasmine/run_jasmine_test.coffee SpecRunner.html}
 end
