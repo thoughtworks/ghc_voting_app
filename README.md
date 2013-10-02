@@ -12,6 +12,7 @@ To run the tests:
                                    
 rake testJs 
 == or ==
-Open SpecRunner.html in a browser
+Open SpecRunner.html in a browser or install phantomjs (brew install
+phantomjs) and run: rake testJs
 
 CI server is here: https://snap-ci.com/projects/thoughtworks/ghc_voting_app/build_history
