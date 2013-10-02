@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ghc13">
   <head>
     <meta charset="utf-8">
     <title>GHC Votes!</title>
@@ -8,9 +8,16 @@
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="css/flat-ui.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico">
+	<script src="/js/angular.js" ng:autobind></script>
+	<script src="/js/angular-resource.js" ng:autobind></script>
+	<script src="/js/app.js" ng:autobind></script>
+	<script src="/js/voteController.js" ng:autobind></script>
   </head>
-  <body>
+  <body ng-controller="VoteController">
 
     <h1> What is your bold approach to changing the face of IT? </h1>
+	<ul ng-repeat="approach in approaches">
+		<li>{{approach.idea}}</li>
+	</ul>
   </body>
 </html>

@@ -1,0 +1,1 @@
+angular.module('ghc13', ['ngResource']);
