@@ -4,3 +4,10 @@ development:
       database: ghc13
       hosts:
         - localhost:27017
+
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL']%>
+     
+     
