@@ -1,7 +1,16 @@
+ul {
+	list-style: none;
+}
 h1 {
 	font-size: 70px;
+	color: #2b9ea6;
 }        
 
 .container {
 	width: 900px;
+}                 
+
+.idea {
+	color: #c1d430;
+	font-size: 16px;
 }

@@ -17,9 +17,14 @@
   </head>
   <body class="container" ng-controller="VoteController">
 	<h1>What is your bold approach to changing the face of IT?</h1>
-    <p>Vote on your favorite idea!</p>
-	<ul ng-repeat="approach in approaches | orderBy:'votes':true ">
-		<li><a ng-click="voteForIdea(approach)">{{approach.idea}}; Votes {{approach.votes}}</a></li>   		
-	</ul>  
+    <p>Vote on your favorite idea!</p> 
+	<div class="to-do">
+	<ul>
+		<li ng-repeat="approach in approaches | orderBy:'votes':true ">
+			<span class="fui-chat"/>
+			<a ng-click="voteForIdea(approach)">{{approach.idea}}; Votes {{approach.votes}}</a>
+		</li>   	
+	</ul>            
+	</div>
   </body>
 </html>
