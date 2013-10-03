@@ -1,12 +1,13 @@
 describe("this is the subject of what you are testing", function() {
-	var scope = {};                       
-	var approaches = [{idea: "First approach"}, {idea: "Second approach"}];
+	var scope = {};                                                                                           
+	var tags = ["thoughtworks", "ghc13"];
+	var approaches = [{idea: "First approach", votes: 1, tags: []}, {idea: "Second approach", votes: 3, tags: tags }];
 	var resource = function(url) {
 		return {
 			get: function(callback) {
 				callback({"approaches": approaches});
 			},
-			save: function() {
+			update: function() {
 			    scope.success = true;
 			}
 		};
@@ -19,6 +20,8 @@ describe("this is the subject of what you are testing", function() {
    it("should have some function X", function(){
 		expect(scope.approaches.length).toBe(2); 
 		expect(scope.approaches).toBe(approaches);
+		approach = _.find(scope.approaches, function(item) { return item.votes === 3})
+		expect(approach.tags).toBe(tags);
    });                                            
 
  	it("should increase vote count when you click on an idea", function(){    
@@ -33,5 +36,5 @@ describe("this is the subject of what you are testing", function() {
 		scope.voteForIdea(approach);
 		expect(approach.votes).toBe(2);
 		expect(scope.success).toBe(true);
-	}); 	
+	});                                
 });

@@ -19,7 +19,7 @@ get '/approach' do
   {:approaches => approaches}.to_json         
 end
 
-post '/approach' do
+put '/approach' do
   content_type :json    
   params = JSON.parse(request.body.read)
     
@@ -27,6 +27,6 @@ post '/approach' do
   approach.set(:votes, params["votes"])
   
   if approach.save                     
-      Approach.all.to_json
-    end                              
+    Approach.all.to_json
+  end                              
 end

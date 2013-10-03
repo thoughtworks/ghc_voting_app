@@ -1,11 +1,11 @@
 function VoteController($scope, $resource) {  
-	var ApproachService = $resource("/approach");
+	var ApproachService = $resource("/approach", {}, {'update':   {method:'PUT'}});
 	ApproachService.get(function(data) {
 		$scope.approaches = data.approaches;  
 	}); 
 	                     
 	$scope.update = function(approach) {
-		ApproachService.save(approach);
+		ApproachService.update(approach);
 	}
 	
 	$scope.voteForIdea = function(approach){                 
