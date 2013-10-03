@@ -1,6 +1,7 @@
 ul {
 	list-style: none;
-}
+}                   
+
 h1 {
 	font-size: 70px;
 	color: #2b9ea6;
@@ -13,4 +14,20 @@ h1 {
 .idea {
 	color: #c1d430;
 	font-size: 16px;
+}
+
+.tile {
+	margin-bottom: 10px;
+	height: 100px;
+}
+
+.vote {
+	color: #D35400;
+	float: left;     
+	margin-left: 0px;
+}              
+
+p {
+	float: left;
+	margin-left: 50px;
 }
