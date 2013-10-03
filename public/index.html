@@ -17,8 +17,8 @@
   <body ng-controller="VoteController">
 
     <h1> What is your bold approach to changing the face of IT? </h1>  
-	<ul>
-		<li ng-repeat="approach in approaches"><a ng-click="voteForIdea(approach)">{{approach.idea}}; Votes {{approach.votes}}</a></li>   		
+	<ul ng-repeat="approach in approaches | orderBy:'votes':true ">
+		<li><a ng-click="voteForIdea(approach)">{{approach.idea}}; Votes {{approach.votes}}</a></li>   		
 	</ul>  
   </body>
 </html>
