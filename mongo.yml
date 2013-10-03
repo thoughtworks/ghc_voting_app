@@ -8,6 +8,7 @@ development:
 production:
   sessions:
     default:
+      database: app18329501
       uri: <%= ENV['MONGOHQ_URL']%>
      
      
