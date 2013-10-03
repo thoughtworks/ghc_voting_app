@@ -10,14 +10,15 @@
     <link rel="shortcut icon" href="images/favicon.ico">
 	<script src="/js/angular.js" ng:autobind></script>
 	<script src="/js/angular-resource.js" ng:autobind></script>
+	<script src="/js/underscore-min.js" ng:autobind></script>	
 	<script src="/js/app.js" ng:autobind></script>
 	<script src="/js/voteController.js" ng:autobind></script>
   </head>
   <body ng-controller="VoteController">
 
-    <h1> What is your bold approach to changing the face of IT? </h1>
-	<ul ng-repeat="approach in approaches">
-		<li>{{approach.idea}}</li>
-	</ul>
+    <h1> What is your bold approach to changing the face of IT? </h1>  
+	<ul>
+		<li ng-repeat="approach in approaches"><a ng-click="voteForIdea(approach)">{{approach.idea}}; Votes {{approach.votes}}</a></li>   		
+	</ul>  
   </body>
 </html>

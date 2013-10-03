@@ -15,9 +15,20 @@ get '/' do
   send_file('public/index.html') 
 end
               
-get '/approach/list' do
+get '/approach' do
   content_type :json                                  
-  approaches = Approach.all;  
-  approaches.to_json         
+  approaches = Approach.all
+  {:approaches => approaches}.to_json         
 end
 
+post '/approach' do
+  content_type :json    
+  params = JSON.parse(request.body.read)
+    
+  approach = Approach.find(params["_id"])
+  approach["votes"] = params["votes"]
+  
+  if approach.save                     
+      Approach.all.to_json
+    end                              
+end

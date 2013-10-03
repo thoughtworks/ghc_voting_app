@@ -1,6 +1,13 @@
 function VoteController($scope, $resource) {  
-	var ApproachResouce = $resource("/approach/list");
-	ApproachResouce.query(function(data) {
-		$scope.approaches = data; 
-	});                           
+	var ApproachService = $resource("/approach", {}, {
+		list: { method: 'GET'}
+	});
+	ApproachService.get(function(data) {
+		$scope.approaches = data.approaches;  
+	}); 
+	
+	$scope.voteForIdea = function(approach){                 
+		approach.votes++;  
+		ApproachService.save(approach);
+	};
 };

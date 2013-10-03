@@ -1,5 +1,7 @@
 class Approach
   include Mongoid::Document
   store_in collection: "approach", database: "ghc13"
-  field :idea
+  field :idea  
+  field :votes, type: Integer
+  
 end
