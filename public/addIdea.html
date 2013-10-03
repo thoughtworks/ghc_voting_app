@@ -17,14 +17,9 @@
   </head>
   <body class="container" ng-controller="VoteController">
 	<h1>What is your bold approach to changing the face of IT?</h1>
-    <p>Click on and idea to vote for your favorite! Or <a href="/addIdea"> add your own!</a> </p> 
-	<div>
-	<ul class="col-md-11">
-		<li ng-repeat="approach in approaches | orderBy:'votes':true " class="tile">
-			<h6><span class="fui-chat"/><a ng-click="voteForIdea(approach)">&nbsp; {{approach.idea}}</a></h6>
-			<p class="vote">Votes: {{approach.votes}}</p>
-		</li>   	
-	</ul>            
-	</div>
+	<form ng-submit="create(approach)" class="tile">
+		 <h5 class="prompt">Your bold idea:</h5><div class="col-md-3"><input type="text" class="form-control" ng-model="approach.idea"/></div>
+		 <div class="col-md-3"><input class="btn btn-block btn-md btn-primary" type="submit"></input></div>
+	</form>                   
   </body>
 </html>

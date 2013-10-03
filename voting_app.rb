@@ -12,11 +12,21 @@ Mongoid.load!("mongo.yml")
 get '/' do
   send_file('public/index.html') 
 end
+   
+get '/addIdea' do
+  send_file('public/addIdea.html') 
+end   
               
 get '/approach' do
   content_type :json                                  
   approaches = Approach.all
   {:approaches => approaches}.to_json         
+end
+
+post '/approach' do     
+  content_type :json    
+  params = JSON.parse(request.body.read) 
+  Approach.where(idea: params["idea"]).create
 end
 
 put '/approach' do

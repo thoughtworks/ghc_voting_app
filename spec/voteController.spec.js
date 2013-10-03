@@ -9,6 +9,9 @@ describe("this is the subject of what you are testing", function() {
 			},
 			update: function() {
 			    scope.success = true;
+			}, 
+			save: function() {
+				scope.saved = true;
 			}
 		};
 	}  
@@ -36,5 +39,11 @@ describe("this is the subject of what you are testing", function() {
 		scope.voteForIdea(approach);
 		expect(approach.votes).toBe(2);
 		expect(scope.success).toBe(true);
-	});                                
+	}); 
+	
+    it("should increase vote count when you click on an idea when updating", function(){    
+        var approach = {"idea": "idea", "votes": 1};
+		scope.create(approach);
+		expect(scope.saved).toBe(true);
+	});	                               
 });
