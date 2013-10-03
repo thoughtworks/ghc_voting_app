@@ -37,6 +37,6 @@ put '/approach' do
   approach.set(:votes, params["votes"])
   
   if approach.save                     
-    Approach.all.to_json
+    {:approaches => Approach.all}.to_json
   end                              
 end
