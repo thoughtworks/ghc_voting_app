@@ -1,7 +1,9 @@
 function VoteController($scope, $resource, $window) {  
 	var ApproachService = $resource("/approach", {}, {'update':   {method:'PUT'}});
 	ApproachService.get(function(data) {
-		$scope.approaches = data.approaches;  
+		$scope.approaches = data.approaches; 
+		var numOfPages = Math.ceil($scope.approaches.length/5);
+		$scope.pages = _.range(1, numOfPages+1, 1);  
 	}); 
 	                     
 	$scope.update = function(approach) {
@@ -25,8 +27,8 @@ function VoteController($scope, $resource, $window) {
 		return index <= $scope.maxShown && index >= $scope.minShown;
 	}                                 
 	
-	$scope.changeShown = function(min, max) {
-		$scope.maxShown = _.isUndefined(max) ? $scope.approaches.length : max;
-		$scope.minShown = min;
+	$scope.changeShown = function(pageNumber) {
+		$scope.maxShown = (pageNumber-1)*5+4;
+		$scope.minShown = (pageNumber-1)*5;
 	}
 };

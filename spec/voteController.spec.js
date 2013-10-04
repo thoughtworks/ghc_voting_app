@@ -39,6 +39,15 @@ describe("this is the subject of what you are testing", function() {
         var approach = {"idea": "idea", "votes": 1};
 		scope.create(approach);
 		expect(scope.saved).toBe(true);
-	});	 
-	                            
+	});	    
+	
+	it("should change the min and max based on the page", function() {
+		scope.changeShown(2);          
+		expect(scope.minShown).toBe(5);
+		expect(scope.maxShown).toBe(9);
+	});
+	
+	it("should generate the pages based on the number of approaches", function() {
+		expect(scope.pages.length).toBe(1);
+	})	                            
 });
