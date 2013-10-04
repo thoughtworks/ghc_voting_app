@@ -26,7 +26,7 @@ function VoteController($scope, $resource, $window) {
 	}                                 
 	
 	$scope.changeShown = function(min, max) {
-		$scope.maxShown = _.isUndefined(max) ? max : $scope.approaches.length;
+		$scope.maxShown = _.isUndefined(max) ? $scope.approaches.length : max;
 		$scope.minShown = min;
 	}
 };
