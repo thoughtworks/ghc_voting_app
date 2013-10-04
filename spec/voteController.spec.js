@@ -27,12 +27,6 @@ describe("this is the subject of what you are testing", function() {
 		expect(approach.tags).toBe(tags);
    });        
 
- 	it("should increase vote count when you click on an idea", function(){    
-        var approach = {"idea": "idea", "votes": 1};
-		scope.voteForIdea(approach);
-		expect(approach.votes).toBe(2);
-		expect(scope.success).toBe(true);
-	});
 	
 	it("should increase vote count when you click on an idea", function(){    
         var approach = {"idea": "idea", "votes": 1};
@@ -45,5 +39,6 @@ describe("this is the subject of what you are testing", function() {
         var approach = {"idea": "idea", "votes": 1};
 		scope.create(approach);
 		expect(scope.saved).toBe(true);
-	});	                               
+	});	 
+	                            
 });
