@@ -18,4 +18,15 @@ function VoteController($scope, $resource, $window) {
 			$window.location = "/";
 		});
 	}
+	                           
+	$scope.maxShown = 4;
+	$scope.minShown = 0;
+	$scope.shouldShow = function(index) {
+		return index <= $scope.maxShown && index >= $scope.minShown;
+	}                                 
+	
+	$scope.changeShown = function(min, max) {
+		$scope.maxShown = _.isUndefined(max) ? max : $scope.approaches.length;
+		$scope.minShown = min;
+	}
 };

@@ -37,3 +37,8 @@ p {
 	margin-left: 115px;
 	margin-right: 10px;
 }
+
+.pagination {
+	float:right;
+	margin-top: 10px;
+}

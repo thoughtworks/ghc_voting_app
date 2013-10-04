@@ -25,7 +25,7 @@ describe("this is the subject of what you are testing", function() {
 		expect(scope.approaches).toBe(approaches);
 		approach = _.find(scope.approaches, function(item) { return item.votes === 3})
 		expect(approach.tags).toBe(tags);
-   });                                            
+   });        
 
  	it("should increase vote count when you click on an idea", function(){    
         var approach = {"idea": "idea", "votes": 1};

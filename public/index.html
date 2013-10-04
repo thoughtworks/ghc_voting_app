@@ -10,21 +10,35 @@
     <link href="css/custom.css" rel="stylesheet"> 
     <link rel="shortcut icon" href="images/favicon.ico">
 	<script src="/js/angular.js" ng:autobind></script>
-	<script src="/js/angular-resource.js" ng:autobind></script>
+	<script src="/js/angular-resource.js" ng:autobind></script> 
+	<script src="/js/ui-bootstrap-custom-0.6.0.js" ng:autobind></script> 
 	<script src="/js/underscore-min.js" ng:autobind></script>	
 	<script src="/js/app.js" ng:autobind></script>
 	<script src="/js/voteController.js" ng:autobind></script>
   </head>
   <body class="container" ng-controller="VoteController">
-	<h1>What is your bold approach to changing the face of IT?</h1>
-    <p>Click on and idea to vote for your favorite! Or <a href="/addIdea"> add your own!</a> </p> 
 	<div>
-	<ul class="col-md-11">
-		<li ng-repeat="approach in approaches | orderBy:'votes':true " class="tile">
-			<h6><span class="fui-chat"/><a ng-click="voteForIdea(approach)">&nbsp; {{approach.idea}}</a></h6>
-			<p class="vote">Votes: {{approach.votes}}</p>
-		</li>   	
-	</ul>            
-	</div>
+		<h1>What is your bold approach to changing the face of IT?</h1>
+	    <p>Click on and idea to vote for your favorite! Or <a href="/addIdea"> add your own!</a> </p> 
+		<ul class="pagination">
+			<li class="previous"><a class="fui-arrow-left"></a></li>
+			<li ng-class="{'active': minShown === 0}"><a>1</a></li>
+			<li ng-class="{'active': minShown === 5}"><a ng-click="changeShown(5,9)">2</a></li>
+			<li ng-class="{'active': minShown === 10}"><a ng-click="changeShown(10,14)">3</a></li>
+			<li ng-class="{'active': minShown === 15}"><a ng-click="changeShown(15,19)">4</a></li>
+			<li ng-class="{'active': minShown === 20}"><a ng-click="changeShown(20)">5</a></li>
+			<!-- <li ng-class="{'active': minShown === 24}"><a ng-click="changeShown(24)">6</a></li> -->
+			<li class="next"><a class="fui-arrow-right"></a></li>
+		</ul>
+	</div>    
+
+	<div>
+		<ul class="col-md-11">
+			<li ng-repeat="approach in approaches | orderBy:'votes':true" class="tile" ng-show="shouldShow($index)">
+				<h6><span class="fui-chat"/><a ng-click="voteForIdea(approach)">&nbsp; {{approach.idea}}</a></h6>
+				<p class="vote">Votes: {{approach.votes}}</p>
+			</li>   	
+		</ul>            
+	</div>                                                                                            
   </body>
 </html>
