@@ -22,7 +22,7 @@
 	    <p>Click on and idea to vote for your favorite! Or <a href="/addIdea"> add your own!</a> </p> 
 		<ul class="pagination">
 			<li class="previous"><a class="fui-arrow-left"></a></li>
-			<li ng-class="{'active': minShown === 0}"><a>1</a></li>
+			<li ng-class="{'active': minShown === 0}"><a ng-click="changeShown(0,4)">1</a></li>
 			<li ng-class="{'active': minShown === 5}"><a ng-click="changeShown(5,9)">2</a></li>
 			<li ng-class="{'active': minShown === 10}"><a ng-click="changeShown(10,14)">3</a></li>
 			<li ng-class="{'active': minShown === 15}"><a ng-click="changeShown(15,19)">4</a></li>
