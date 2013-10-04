@@ -32,8 +32,11 @@
 	<div>
 		<ul class="col-md-11">
 			<li ng-repeat="approach in approaches | orderBy:'votes':true" class="tile" ng-show="shouldShow($index)">
-				<h6><span class="fui-chat"/><a ng-click="voteForIdea(approach)">&nbsp; {{approach.idea}}</a></h6>
-				<p class="vote">Votes: {{approach.votes}}</p>
+				<h6 class="col-md-9"><span class="fui-chat"/><a ng-click="voteForIdea(approach)">&nbsp; {{approach.idea}}</a></h6>
+				<section class="vote col-md-2">
+					<p>Votes</p>
+					<p>{{approach.votes}}</p>
+				</div>
 			</li>   	
 		</ul>            
 	</div>
