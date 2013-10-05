@@ -18,12 +18,16 @@
 	<script src="/js/app.js" ng:autobind></script>
 	<script src="/js/voteController.js" ng:autobind></script>  
 </head>
-  <body class="container" ng-controller="VoteController">
+  <body id="addIdea" class="container" ng-controller="VoteController">
 	<h1>What is your bold approach to changing the face of IT?</h1>
-	<form ng-submit="create(approach)" class="tile">
-		 <h5 class="prompt">Your bold idea:</h5>
-		<div class="col-md-3"><input type="text" class="form-control" ng-model="approach.idea"/></div>
-		<div class="col-md-3"><input class="btn btn-block btn-md btn-primary" type="submit"></input></div>
-	</form>                   
+	<div class="tile">
+		<form ng-submit="create(approach)">
+			<div>
+			   <h5 class="prompt">Your bold idea:</h5> 
+			   <textarea type="text" class="form-control" ng-model="approach.idea"></textarea>
+			</div>
+			<div><input class="btn btn-block btn-md btn-primary" type="submit"></input></div>
+		</form>                   
+	</div>
   </body>
 </html>

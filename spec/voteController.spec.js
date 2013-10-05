@@ -42,7 +42,8 @@ describe("this is the subject of what you are testing", function() {
 	});	    
 	
 	it("should change the min and max based on the page", function() {
-		scope.changeShown(2);          
+		scope.changeShown(2); 
+		expect(scope.currentPage).toBe(2)         
 		expect(scope.minShown).toBe(5);
 		expect(scope.maxShown).toBe(9);
 	});

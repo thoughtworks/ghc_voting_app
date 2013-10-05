@@ -18,8 +18,9 @@ h1 {
 
 .tile {
 	margin-bottom: 10px;
-	height: 100px;              
-	padding: 0px !important;
+	min-height: 100px;              
+	padding: 0px;
+	border: 1px solid #95A5A6;
 }                
 
 .tile h6 {
@@ -42,17 +43,25 @@ h1 {
 }              
 
 p {
-	float: left;
-	margin-left: 50px;
+	text-align: center;
 }   
 
 .prompt {
 	float: left;
-	margin-left: 115px;
 	margin-right: 10px;
 }
 
 .pagination {
-	float:right;
+	margin-left: 70.5%;
 	margin-top: 10px;
+}
+
+#addIdea form {
+	padding: 20px;
+}
+
+#addIdea form input[type=submit] {
+	margin-top: 10px;
+	width: 20%;
+	margin-left: 80%;
 }

@@ -19,19 +19,21 @@
 	<script src="/js/voteController.js" ng:autobind></script>
   </head>
   <body class="container" ng-controller="VoteController">
-	<div>
+	<div class="col-md-14">
 		<h1>What is your bold approach to changing the face of IT?</h1>
 	    <p>Click on and idea to vote for your favorite! Or <a href="/addIdea"> add your own!</a> </p> 
-		<ul class="pagination">
-			<li class="previous"><a class="fui-arrow-left"></a></li>        
-  			<li ng-repeat="page in pages" ng-class="{'active': minShown === (page-1)*5}"><a ng-click="changeShown(page)">{{page}}</a></li>
-			<li class="next"><a class="fui-arrow-right"></a></li>
-		</ul>
+		<div class="col-md-12">
+			<ul class="pagination">
+				<li class="previous"><a class="fui-arrow-left"></a></li>        
+	  			<li ng-repeat="page in pages" ng-class="{'active': minShown === (page-1)*5}"><a ng-click="changeShown(page)">{{page}}</a></li>
+				<li class="next"><a class="fui-arrow-right"></a></li>
+			</ul>
+		</div>
 	</div>    
 
-	<div>
-		<ul class="col-md-11">
-			<li ng-repeat="approach in approaches | orderBy:'votes':true" class="tile" ng-show="shouldShow($index)">
+	<div class="col-md-12">
+		<ul>
+			<li ng-repeat="approach in approaches | orderBy:'votes':true" class="tile col-md-12" ng-show="shouldShow($index)">
 				<h6 class="col-md-9"><span class="fui-chat"/><a ng-click="voteForIdea(approach)">&nbsp; {{approach.idea}}</a></h6>
 				<section class="vote col-md-2">
 					<p>Votes</p>
@@ -41,7 +43,7 @@
 		</ul>            
 	</div>
 
-	<div>
+	<div class="col-md-13">
 		<p>Check out the code for this app in <a href="http://github.com/thoughtworks/ghc_voting_app">our GitHub repo</a>!</p>
 	</div>
   </body>
