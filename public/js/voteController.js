@@ -9,6 +9,7 @@ function VoteController($scope, $resource, $window) {
 	}; 
 	
 	$scope.create = function(approach) {
+		$scope.splitTags();
 		ApproachService.save(approach, function() {
 			$window.location = "/";
 		});
@@ -22,6 +23,11 @@ function VoteController($scope, $resource, $window) {
 		$scope.currentPage = pageNumber;
 		$scope.maxShown = (pageNumber-1)*5+4;
 		$scope.minShown = (pageNumber-1)*5;
+	}  
+	
+	$scope.splitTags = function() {
+		if(!$scope.approach.tags) return;
+		$scope.approach.tags = $scope.approach.tags.split(",");
 	}
 	
 	var ApproachService = $resource("/approach", {}, {'update':   {method:'PUT'}});

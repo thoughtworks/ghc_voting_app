@@ -34,11 +34,20 @@
 	<div class="col-md-12">
 		<ul>
 			<li ng-repeat="approach in approaches | orderBy:'votes':true" class="tile col-md-12" ng-show="shouldShow($index)">
-				<h6 class="col-md-9"><span class="fui-chat"/><a ng-click="voteForIdea(approach)">&nbsp; {{approach.idea}}</a></h6>
+				<section class="col-md-9">
+					<h6>
+						<span class="fui-chat"/>
+						<a ng-click="voteForIdea(approach)">&nbsp; {{approach.idea}}</a>
+					</h6>    
+					<div>
+						<label ng-show="approach.tags">Tags:</label> 
+						<textarea ng-show="approach.tags" type="text" readonly="true" length="100">{{approach.tags | showAsString }}</textarea>
+					</div>
+				</section>
 				<section class="vote col-md-2">
 					<p>Votes</p>
 					<p>{{approach.votes}}</p>
-				</div>
+				</section>
 			</li>   	
 		</ul>            
 	</div>

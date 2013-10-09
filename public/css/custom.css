@@ -31,6 +31,22 @@ h1 {
 	font-size: 24px;
 	margin: 0px !important;
 	float: none !important;
+}   
+
+.tile section div {
+	width: 100%;
+}               
+
+.tile section div label {
+	padding-top: 7px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.tile section div textarea {
+	width: 80%;
+	height: 35px;
+	margin-left: 10px;
 }
 
 .vote {
@@ -58,6 +74,10 @@ p {
 
 #addIdea form {
 	padding: 20px;
+}
+ 
+#addIdea textarea {
+	margin-bottom: 10px;
 }
 
 #addIdea form input[type=submit] {

@@ -25,8 +25,10 @@ end
 
 post '/approach' do     
   content_type :json    
-  params = JSON.parse(request.body.read) 
-  Approach.where(idea: params["idea"]).create
+  params = JSON.parse(request.body.read)   
+  approach = Approach.where(idea: params["idea"]).create
+  approach.set(:tags, params["tags"])
+  approach.save
 end
 
 put '/approach' do

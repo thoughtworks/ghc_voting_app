@@ -50,5 +50,19 @@ describe("this is the subject of what you are testing", function() {
 	
 	it("should generate the pages based on the number of approaches", function() {
 		expect(scope.pages.length).toBe(1);
-	})	                            
+	});
+	
+	it("should separate tags by comma", function() {
+		scope.approach.tags = "tag1, tag2, tag3";
+		scope.splitTags();
+		expect(scope.approach.tags.length).toBe(3);
+		expect(scope.approach.tags[0]).toBe("tag1");
+		expect(scope.approach.tags[1]).toBe(" tag2");
+	});	                             
+	
+	it("should not try to split no tags", function() {
+		scope.approach.tags = undefined;
+		scope.splitTags();
+		expect(scope.approach.tags).toBe(undefined); 
+	});
 });
